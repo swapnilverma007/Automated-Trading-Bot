@@ -1,0 +1,46 @@
+# Python
+*.pyc
+__pycache__/
+
+# Django/Database
+db.sqlite3
+*.db
+
+# Environment variables and secrets
+.env
+.env.*
+*.secret*
+*key*
+*config*
+credentials.json
+keys.json
+
+# Django settings
+settings.py
+
+# Configuration files
+*.conf
+
+# Logs and cache
+*.log
+logs/
+*.csv
+data/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Static/media files (if not needed)
+media/
+staticfiles/
+
+# Model files (optional, if you don't want to share)
+*.h5
+*.pkl
+
+venv/

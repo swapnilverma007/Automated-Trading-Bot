@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock title %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+    {% block head %}{% endblock head %}
+  </head>
+  <body class="bg-blue-50 min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <header class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white shadow-lg">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo Area -->
+          <a href="/" class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-300" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+            </svg>
+            <span class="text-xl font-bold">AutoTrade</span>
+          </a>
+          
+          <!-- Main Navigation -->
+          <nav class="hidden md:flex space-x-6">
+            <a href="/" class="text-white hover:text-blue-200 py-2 transition duration-150">Home</a>
+            <a href="{% url 'automate' %}" class="text-white hover:text-blue-200 py-2 transition duration-150">Trading Bot</a>
+            <a href="{% url 'chart_view' %}" class="text-white hover:text-blue-200 py-2 transition duration-150">Visualization</a>
+            <a href="{% url 'news_view' %}" class="text-white hover:text-blue-200 py-2 transition duration-150">News & Analysis</a>
+            <a href="{% url 'strategies_view' %}" class="text-white hover:text-blue-200 py-2 transition duration-150">Strategies</a>
+            <a href="{% url 'wishlist' %}" class="text-white hover:text-blue-200 py-2 transition duration-150">WatchList</a>
+            <a href="{% url 'alerts' %}" class="text-white hover:text-blue-200 py-2 transition duration-150">Alerts</a>
+          </nav>
+          
+          <!-- Auth Buttons -->
+          <div class="hidden md:flex items-center space-x-3">
+          </div>
+          
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button type="button" class="text-white hover:text-blue-200 focus:outline-none" id="mobile-menu-button">
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="md:hidden hidden" id="mobile-menu">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="/" class="block px-3 py-2 rounded-md text-white hover:bg-blue-600">Home</a>
+            <a href="{% url 'automate' %}" class="block px-3 py-2 rounded-md text-white hover:bg-blue-600">Trading Bot</a>
+            <a href="{% url 'chart_view' %}" class="block px-3 py-2 rounded-md text-white hover:bg-blue-600">Visualization</a>
+            <a href="{% url 'news_view' %}" class="block px-3 py-2 rounded-md text-white hover:bg-blue-600">News & Analysis</a>
+            <a href="{% url 'strategies_view' %}" class="block px-3 py-2 rounded-md text-white hover:bg-blue-600">Strategies</a>
+            <a href="{% url 'wishlist' %}" class="block px-3 py-2 rounded-md text-white hover:bg-blue-600">WatchList</a>
+            <a href="{% url 'alerts' %}" class="block px-3 py-2 rounded-md text-white hover:bg-blue-600">Alerts</a>
+            <a href="/contact" class="block px-3 py-2 rounded-md text-white hover:bg-blue-600">Contact us</a>
+          </div>
+          <div class="px-2 py-3 border-t border-blue-600 flex flex-col space-y-2">
+            <a href="#" class="px-3 py-2 rounded-md text-center border border-white text-white hover:bg-white hover:text-blue-700">Login</a>
+            <a href="#" class="px-3 py-2 rounded-md text-center bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 hover:from-yellow-500 hover:to-yellow-600">Sign-up</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      {% block body %}{% endblock body %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-white to-blue-100">
+      <div class="container mx-auto px-5 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="md:col-span-1">
+            <div class="flex items-center space-x-2 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+              </svg>
+              <span class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">AutoTrade</span>
+            </div>
+            <p class="text-gray-600">Advanced automated trading solutions for cryptocurrency markets.</p>
+            <div class="mt-4 flex space-x-3">
+              <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors">
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="md:col-span-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Products</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Trading Bot</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Market Analysis</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Portfolio Management</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Risk Assessment</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Resources</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Documentation</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">API Reference</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Blog</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Community</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Company</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">About Us</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Careers</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                  <li><a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-t border-blue-100 mt-12 pt-6">
+          <div class="flex flex-col sm:flex-row justify-between items-center">
+            <p class="text-gray-600 text-sm">&copy; 2025 AutoTrade. All rights reserved.</p>
+            <div class="mt-4 sm:mt-0">
+              <a href="#" class="text-sm text-blue-600 hover:underline">Privacy Policy</a>
+              <span class="mx-2 text-gray-400">|</span>
+              <a href="#" class="text-sm text-blue-600 hover:underline">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>

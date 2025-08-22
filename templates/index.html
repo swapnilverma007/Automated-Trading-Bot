@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+{% endblock head %}
+
+{% block body %}
+<div class="bg-gradient-to-b from-blue-50 to-white">
+  <!-- Hero Section -->
+  <section class="py-20 sm:py-32 overflow-hidden">
+    <div class="container px-5 mx-auto flex flex-wrap items-center">
+      <div class="w-full text-center mb-16" data-aos="fade-up" data-aos-duration="800">
+        <h1 class="text-5xl sm:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-4">AutoTrade</h1>
+        <p class="text-xl font-medium text-blue-600 max-w-2xl mx-auto">Maximize Your Gains, Minimize Your Effort.</p>
+      </div>
+      
+      <div class="flex flex-wrap w-full">
+        <div class="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6" data-aos="fade-right" data-aos-duration="1000">
+          <div class="flex relative pb-12">
+            <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+              <div class="h-full w-1 bg-blue-200 pointer-events-none"></div>
+            </div>
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 inline-flex items-center justify-center text-white relative z-10">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="flex-grow pl-4">
+              <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Automated Trading</h2>
+              <p class="leading-relaxed text-gray-600">Revolutionize your trading experience with our state-of-the-art automation features. Effortlessly execute trades with precision and speed, leveraging advanced algorithms to maximize your investment potential.</p>
+            </div>
+          </div>
+          
+          <div class="flex relative pb-12">
+            <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+              <div class="h-full w-1 bg-blue-200 pointer-events-none"></div>
+            </div>
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 inline-flex items-center justify-center text-white relative z-10">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <div class="flex-grow pl-4">
+              <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Visualize</h2>
+              <p class="leading-relaxed text-gray-600">Effortlessly interpret complex data through intuitive charts and graphs, empowering you to make informed decisions and stay ahead of market trends.</p>
+            </div>
+          </div>
+          
+          <div class="flex relative pb-12">
+            <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+              <div class="h-full w-1 bg-blue-200 pointer-events-none"></div>
+            </div>
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 inline-flex items-center justify-center text-white relative z-10">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="3 17 9 11 13 15 21 7" />
+                <polyline points="14 7 21 7 21 14" />
+              </svg>                                        
+            </div>
+            <div class="flex-grow pl-4">
+              <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Strategies</h2>
+              <p class="leading-relaxed text-gray-600">Optimize your investments with our advanced strategy tools. Develop, test, and implement sophisticated trading strategies that adapt to market conditions, ensuring you maximize returns and minimize risks.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex relative pb-12">
+            <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+              <div class="h-full w-1 bg-blue-200 pointer-events-none"></div>
+            </div>
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 inline-flex items-center justify-center text-white relative z-10">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="flex-grow pl-4">
+              <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Get Notified</h2>
+              <p class="leading-relaxed text-gray-600">Stay ahead of the market with our real-time notification system. Receive instant alerts on market movements and trading opportunities, ensuring you never miss a critical update.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex relative">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 inline-flex items-center justify-center text-white relative z-10">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <path d="M22 4L12 14.01l-3-3"></path>
+              </svg>
+            </div>
+            <div class="flex-grow pl-4">
+              <h2 class="font-medium title-font text-lg text-gray-900 mb-1 tracking-wider">Get Latest News</h2>
+              <p class="leading-relaxed text-gray-600">
+                Stay informed with our dynamic latest news updates module, delivering real-time insights directly to your fingertips. Keep ahead of market developments and 
+                make informed decisions with up-to-the-minute information tailored to your interests.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-3/5 md:w-1/2 md:mt-0 mt-12" data-aos="fade-left" data-aos-duration="1000">
+          <div class="relative h-[700px] rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent z-10"></div>
+            <img class="absolute inset-0 w-full h-full object-cover object-center" src="{% static 'bitcoin.gif' %}" alt="Home Page image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-5 py-10">
+    <hr class="border-t border-blue-100">
+  </div>
+
+  <!-- Daily Trades Section -->
+  <section class="py-20">
+    <div class="container px-5 mx-auto">
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 md:w-1/2 sm:w-full w-full flex items-center justify-center" data-aos="fade-right" data-aos-duration="800">
+          <div class="w-full">
+            <h2 class="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-8">We send out profitable trades daily</h2>
+            <div class="space-y-4">
+              <div class="flex items-center p-3 bg-green-50 rounded-lg transition-all hover:shadow-md">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 inline-flex items-center justify-center text-green-500 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </span>
+                <span class="text-gray-700">Daily market insights for better trading decisions</span>
+              </div>
+              <div class="flex items-center p-3 bg-green-50 rounded-lg transition-all hover:shadow-md">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 inline-flex items-center justify-center text-green-500 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </span>
+                <span class="text-gray-700">Tailored strategies for consistent returns</span>
+              </div>
+              <div class="flex items-center p-3 bg-green-50 rounded-lg transition-all hover:shadow-md">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 inline-flex items-center justify-center text-green-500 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </span>
+                <span class="text-gray-700">Profitable trends identified in real-time</span>
+              </div>
+              <div class="flex items-center p-3 bg-green-50 rounded-lg transition-all hover:shadow-md">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 inline-flex items-center justify-center text-green-500 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </span>
+                <span class="text-gray-700">Automated trading signals for optimal results</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="p-4 md:w-1/2 sm:w-full w-full flex items-center justify-center" data-aos="fade-left" data-aos-duration="800">
+          <div class="w-full max-w-md relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-xl transform -rotate-3"></div>
+            <img src="{% static 'crypto.svg' %}" alt="Profitable Trades Image" class="relative z-10 rounded-xl shadow-xl w-full h-auto transform transition-transform duration-500 hover:scale-[1.03]">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mx-auto px-5 py-10">
+    <hr class="border-t border-blue-100">
+  </div>
+
+  <!-- Auto Trading Section -->
+  <section class="py-20">
+    <div class="container px-5 mx-auto">
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 md:w-1/2 sm:w-full w-full flex items-center justify-center md:order-2" data-aos="fade-left" data-aos-duration="800">
+          <div class="w-full">
+            <h2 class="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-8">Auto Trading Capabilities</h2>
+            <div class="space-y-4">
+              <div class="flex items-center p-3 bg-blue-50 rounded-lg transition-all hover:shadow-md">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 inline-flex items-center justify-center text-blue-500 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </span>
+                <span class="text-gray-700">24/7 automated trading on Binance without manual intervention</span>
+              </div>
+              <div class="flex items-center p-3 bg-blue-50 rounded-lg transition-all hover:shadow-md">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 inline-flex items-center justify-center text-blue-500 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </span>
+                <span class="text-gray-700">Advanced algorithms for precise market predictions on Binance</span>
+              </div>
+              <div class="flex items-center p-3 bg-blue-50 rounded-lg transition-all hover:shadow-md">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 inline-flex items-center justify-center text-blue-500 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </span>
+                <span class="text-gray-700">Risk management and stop-loss strategies specifically designed for Binance</span>
+              </div>
+              <div class="flex items-center p-3 bg-blue-50 rounded-lg transition-all hover:shadow-md">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 inline-flex items-center justify-center text-blue-500 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </span>
+                <span class="text-gray-700">Seamless integration with Binance for optimal execution of trades</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="p-4 md:w-1/2 sm:w-full w-full flex items-center justify-center md:order-1" data-aos="fade-right" data-aos-duration="800">
+          <div class="w-full max-w-md relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-blue-500/20 rounded-xl transform rotate-3"></div>
+            <img src="{% static 'cryptotwo.svg' %}" alt="Auto Trading Image" class="relative z-10 rounded-xl shadow-xl w-full h-auto transform transition-transform duration-500 hover:scale-[1.03]">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        once: true,
+        disable: 'mobile'
+      });
+    });
+  </script>
+{% endblock body %}
